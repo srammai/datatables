@@ -4,7 +4,11 @@ var table;
 
 // exposing loadData to FileMaker Script
 window.loadData = function (json) {
-  // TODO: Load the DataTables libraries by linking to the DataTables CDN.
+  const obj = JSON.parse(json); 
+  const data = obj.data; 
+  console.log(data); 
+
+  // TODO: Load the DataTables libraries by linking to the DataTables CDN. 
   //TODO: Get data from FileMaker
   //TODO: prep it for the JS.
 
@@ -19,7 +23,14 @@ window.loadData = function (json) {
     pageLength: 20,
     searching: true,
     colReorder: true,
-    columns: [],
-    data: [],
+    columns: [
+      {title: "Company", data: "fieldData.CompanyName"},
+      {title: "Address", data: "fieldData.StreetAddress", orderable: false },
+      {title: "City", data: "fieldData.City", orderable: true },
+      {title: "State", data: "fieldData.State" },
+      {title: "Zip", data: "fieldData.Zip" },
+      {title: "ModifiedTimeStamp", data: "fieldData.ModifiedTimeStamp" },
+  ],
+    data: data,
   });
 };
