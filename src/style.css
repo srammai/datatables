@@ -5,3 +5,27 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.table {
+  color: ##deefe7;
+  font-size: 13px;
+  background-color: #159A9C;
+  box-shadow: 5px 10px #888888;
+  border: 3px solid #159A9C;
+}
+
+.table tbody tr:hover{
+  background-color: #b4bec9;
+  color: #002333;
+  cursor: pointer;
+}
+
+.table th{
+  background-color: #002333;
+  color: #b4bec9
+}
