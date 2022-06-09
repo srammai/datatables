@@ -22,3 +22,9 @@ const columns = type ==="Customers" ? customersColumns : admissionsColumns;
     data: data,
   });
 };
+
+$("#dtable").on("click", "tbody tr", function () {
+  const row = table.row(this).data();
+  console.log(row);
+  FileMaker.PerformScript("On Double Click Row", JSON.stringify(row))
+});
